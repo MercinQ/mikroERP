@@ -23,11 +23,16 @@ namespace mikroERP.API.Data
 
            return await employee;
         }
-
         public async Task<List<Employee>> GetEmployees()
         {
-            var employees = _context.Employees.ToListAsync();
+            var employees = _context.Employees
+            .Include(d => d.Department.Location)
+            .Include(t => t.Transport)
+            .ToListAsync();
             return await employees;
         }
+
+
+
     }
 }
