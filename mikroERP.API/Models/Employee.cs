@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace mikroERP.API.Models
 {
@@ -16,7 +17,8 @@ namespace mikroERP.API.Models
         
         public int? DepartmentId { get; set; }
         public Department Department { get; set; }
-        public int? TransportId { get; set; }
+        
+        public int? TransportId {get; set;}
         public Transport Transport { get; set; }
     }
 }

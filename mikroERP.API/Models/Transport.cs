@@ -6,6 +6,6 @@ namespace mikroERP.API.Models
     {
         public int Id { get; set; }
         public string NameOfTransport { get; set; }
-        public ICollection<Employee> Employee { get; set; }  
+
     }
 }

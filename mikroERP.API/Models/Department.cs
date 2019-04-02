@@ -8,6 +8,5 @@ namespace mikroERP.API.Models
         public string NameOfDepartment { get; set; }
         public Location Location { get; set; }
         public int? LocationId { get; set; }
-        public ICollection<Employee> Employee { get; set; }
     }
 }

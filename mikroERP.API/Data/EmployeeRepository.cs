@@ -17,7 +17,10 @@ namespace mikroERP.API.Data
         public async Task<Employee> GetEmployee(int id)
         {
            var employee = _context.Employees
+           .Include(d => d.Department.Location)
+           .Include(t => t.Transport)
            .FirstOrDefaultAsync(u => u.Id == id);
+
            return await employee;
         }
 

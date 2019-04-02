@@ -9,7 +9,7 @@ using mikroERP.API.Data;
 namespace mikroERP.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190402113013_Init")]
+    [Migration("20190402145547_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -499,18 +499,18 @@ namespace mikroERP.API.Migrations
             modelBuilder.Entity("mikroERP.API.Models.Department", b =>
                 {
                     b.HasOne("mikroERP.API.Models.Location", "Location")
-                        .WithMany("Department")
+                        .WithMany()
                         .HasForeignKey("LocationId");
                 });
 
             modelBuilder.Entity("mikroERP.API.Models.Employee", b =>
                 {
                     b.HasOne("mikroERP.API.Models.Department", "Department")
-                        .WithMany("Employee")
+                        .WithMany()
                         .HasForeignKey("DepartmentId");
 
                     b.HasOne("mikroERP.API.Models.Transport", "Transport")
-                        .WithMany("Employee")
+                        .WithMany()
                         .HasForeignKey("TransportId");
                 });
 #pragma warning restore 612, 618
