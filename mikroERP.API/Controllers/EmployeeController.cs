@@ -1,6 +1,8 @@
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using mikroERP.API.Data;
+using mikroERP.API.Dtos;
 
 namespace mikroERP.API.Controllers
 {
@@ -9,16 +11,20 @@ namespace mikroERP.API.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _repo;
-        public EmployeeController(IEmployeeRepository repo)
+        private readonly IMapper _mapper;
+
+        public EmployeeController(IEmployeeRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
-            var employeeToReturn = await _repo.GetEmployee(id);
+            var employee = await _repo.GetEmployee(id);
+            var employeeToReturn = _mapper.Map<EmployeeForTableDto>(employee);
 
             return Ok(employeeToReturn);
         }

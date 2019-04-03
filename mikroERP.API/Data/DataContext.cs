@@ -15,6 +15,7 @@ namespace mikroERP.API.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            
             builder.Entity<Department>().HasData( //write seed here
              new Department { Id = 1, NameOfDepartment = "Management", LocationId = 1 },
              new Department { Id = 2, NameOfDepartment = "Logistics Department", LocationId = 2 },
