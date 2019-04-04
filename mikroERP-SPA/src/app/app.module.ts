@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { EmployeeTableComponent } from './employee-table/employee-table.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeService } from './_services/employee.service';
 
 @NgModule({
    declarations: [
@@ -20,9 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MatTableModule,
       MatPaginatorModule,
       MatSortModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      HttpClientModule
    ],
-   providers: [],
+   providers: [
+      EmployeeService
+   ],
    bootstrap: [
       AppComponent
    ]

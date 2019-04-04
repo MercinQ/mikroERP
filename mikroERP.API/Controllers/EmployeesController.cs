@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -8,12 +9,12 @@ namespace mikroERP.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeRepository _repo;
         private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeRepository repo, IMapper mapper)
+        public EmployeesController(IEmployeeRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
@@ -31,8 +32,10 @@ namespace mikroERP.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEmployees()
         {
-            var employeeToReturn = await _repo.GetEmployees();
-            return Ok(employeeToReturn);
+            var employees = await _repo.GetEmployees();
+            var employeesToReturn = _mapper.Map<IEnumerable<EmployeeForTableDto>>(employees);
+
+            return Ok(employeesToReturn);
         }
     }
 }

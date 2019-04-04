@@ -30,6 +30,7 @@ namespace mikroERP.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddAutoMapper();
+            services.AddCors();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().AddJsonOptions(
@@ -47,9 +48,9 @@ namespace mikroERP.API
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
-
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader() );
             app.UseHttpsRedirection();
             app.UseMvc();
         }
