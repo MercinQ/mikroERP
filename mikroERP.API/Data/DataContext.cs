@@ -20,7 +20,7 @@ namespace mikroERP.API.Data
              new Department { Id = 1, NameOfDepartment = "Management", LocationId = 1 },
              new Department { Id = 2, NameOfDepartment = "Logistics Department", LocationId = 2 },
              new Department { Id = 3, NameOfDepartment = "Administration Department", LocationId = 6 },
-             new Department { Id = 4, NameOfDepartment = "Marketing department", LocationId = 7 }
+             new Department { Id = 4, NameOfDepartment = "Marketing Department", LocationId = 7 }
             );
 
             builder.Entity<Employee>().HasData(

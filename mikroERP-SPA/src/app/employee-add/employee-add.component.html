@@ -1,3 +1,67 @@
-<p>
-  employee-add works!
-</p>
+<div class="form-container">
+
+  <h3>Dodaj Pracownika</h3><br/>
+
+<form #addForm="ngForm" (ngSubmit)="addEmployee()" class="form-employee">
+  <mat-form-field >
+    <input  name="firstname" type="text" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" matInput placeholder="Imię" required [(ngModel)]="model.firstname">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Nazwisko" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" type="text" name="lastname" required [(ngModel)]="model.lastname">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Płeć" name="sex" required [(ngModel)]="model.sex">
+      <mat-option value="M">M</mat-option>
+      <mat-option value="F">F</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" type="email" pattern=".+@.+\..+" name="email" required [(ngModel)]="model.email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Wynagrodzenie" type="number" name="wages" required [(ngModel)]="model.wages">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="pickerWork" placeholder="Dzień rozpoczęcia pracy (mm/dd/yy)" required name="dayOfEmployment" [(ngModel)]="model.dayOfEmployment">
+      <mat-datepicker-toggle matSuffix [for]="pickerWork"></mat-datepicker-toggle>
+      <mat-datepicker #pickerWork></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Telefon" type="tel" name="phone" pattern="[0-9]{9}" required [(ngModel)]="model.phone">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="pickerBirth" placeholder="Data urodzenia (mm/dd/yy)"  required name="dateOfBirth" [(ngModel)]="model.dateOfBirth">
+      <mat-datepicker-toggle matSuffix [for]="pickerBirth"></mat-datepicker-toggle>
+      <mat-datepicker #pickerBirth></mat-datepicker>
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-select placeholder="Dział" type="number" name="department" required [(ngModel)]="model.department">
+      <mat-option value="1">Managment</mat-option>
+      <mat-option value="2">Logistics Department</mat-option>
+      <mat-option value="3">Administration Department</mat-option>
+      <mat-option value="4">Marketing Department</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Transport" type="number" name="transport" required [(ngModel)]="model.transport">
+      <mat-option value="1">Samochód</mat-option>
+      <mat-option value="2">Pieszo</mat-option>
+      <mat-option value="3">Rower</mat-option>
+      <mat-option value="4">Transport Publiczny</mat-option>
+      <mat-option value="5">Pociąg</mat-option>
+      <mat-option value="6">Inne</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <button [disabled]="!addForm.valid" type="submit" class="btn btn-success btn-lg btn-block">Dodaj</button><br/>
+  </form>
+</div>
