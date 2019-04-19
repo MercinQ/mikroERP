@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { EmployeeTableComponent } from './employee-table/employee-table.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatSelectModule, MatButtonModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule } from '@angular/material';
+import { MatSelectModule, MatButtonModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,16 +16,17 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeesTableComponent } from './employees-table/employees-table.component';
 
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
-      EmployeeTableComponent,
       ChartsComponent,
       EmployeeAddComponent,
-      HomeComponent
+      HomeComponent,
+      EmployeesTableComponent,
    ],
    imports: [
       BrowserModule,
@@ -43,11 +44,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       FormsModule,
       BrowserAnimationsModule,
       HttpClientModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
    ],
    providers: [
       EmployeeService,
-      MatDatepickerModule
+      MatDatepickerModule,
    ],
    bootstrap: [
       AppComponent

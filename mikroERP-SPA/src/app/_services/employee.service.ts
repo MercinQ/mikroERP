@@ -19,5 +19,4 @@ constructor(private http: HttpClient) { }
     return this.http.get<Employee[]>(this.baseUrl + 'employees');
   }
 
-  
 }

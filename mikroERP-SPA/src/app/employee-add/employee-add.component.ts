@@ -13,7 +13,7 @@ export class EmployeeAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  addEmployee(){
+  addEmployee() {
     console.log(this.model);
   }
 

@@ -1,0 +1,10 @@
+<div class="mat-elevation-z8">
+<mat-table [dataSource]="listData" >
+  <ng-container matColumnDef="fullName">
+    <mat-header-cell>FirstName</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element}}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
