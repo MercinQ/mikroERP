@@ -14,7 +14,8 @@ import { DataSource } from '@angular/cdk/table';
 
 export class EmployeesTableComponent implements OnInit {
   employees: Employee[];
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'sex'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'sex', 'email', 'wages', 'dayOfEmployment',
+   'phone', 'dateOfBirth', 'nameOfDepartment', 'roomNr', 'floorNr', 'nameOfTransport'];
   public dataSource = new MatTableDataSource<Employee>();
   constructor(private employeeService: EmployeeService) { }
 
