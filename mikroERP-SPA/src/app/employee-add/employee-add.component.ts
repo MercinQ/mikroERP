@@ -14,7 +14,7 @@ export class EmployeeAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  addEmployee(){
+  addEmployee() {
     console.log(this.model);
     this.employeeService.addEmployee(this.model).subscribe(() => {
       console.log('Employee added');

@@ -43,7 +43,7 @@
   </mat-form-field>
 
     <mat-form-field>
-    <mat-select placeholder="Dział" type="number" name="department" required [(ngModel)]="model.department">
+    <mat-select placeholder="Dział" type="number" name="department" required [(ngModel)]="model.departmentId">
       <mat-option value="1">Managment</mat-option>
       <mat-option value="2">Logistics Department</mat-option>
       <mat-option value="3">Administration Department</mat-option>
@@ -52,7 +52,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select placeholder="Transport" type="number" name="transport" required [(ngModel)]="model.transport">
+    <mat-select placeholder="Transport" type="number" name="transport" required [(ngModel)]="model.transportId">
       <mat-option value="1">Samochód</mat-option>
       <mat-option value="2">Pieszo</mat-option>
       <mat-option value="3">Rower</mat-option>

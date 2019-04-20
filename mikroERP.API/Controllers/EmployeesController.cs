@@ -52,9 +52,9 @@ namespace mikroERP.API.Controllers
                 Sex = employeeForAddEmployeeDto.Sex,
                 Email = employeeForAddEmployeeDto.Email,
                 Wages = employeeForAddEmployeeDto.Wages,
-                //DayOfEmployment = employeeForAddEmployeeDto.DayOfEmployment,
+                DayOfEmployment = employeeForAddEmployeeDto.DayOfEmployment,
                 Phone = employeeForAddEmployeeDto.Phone,
-                //DateOfBirth = employeeForAddEmployeeDto.DateOfBirth,
+                DateOfBirth = employeeForAddEmployeeDto.DateOfBirth,
                 DepartmentId = (int)employeeForAddEmployeeDto.DepartmentId,
                 TransportId = (int)employeeForAddEmployeeDto.TransportId
             };
