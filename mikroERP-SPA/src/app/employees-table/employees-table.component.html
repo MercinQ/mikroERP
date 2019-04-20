@@ -1,10 +1,27 @@
 <div class="mat-elevation-z8">
-<mat-table [dataSource]="listData" >
-  <ng-container matColumnDef="fullName">
-    <mat-header-cell>FirstName</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{element}}</mat-cell>
+<table mat-table [dataSource]="dataSource" >
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
+
+  <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name. </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name. </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sex">
+          <th mat-header-cell *matHeaderCellDef> sex. </th>
+          <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+    </ng-container>
+  
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+</table>
 </div>

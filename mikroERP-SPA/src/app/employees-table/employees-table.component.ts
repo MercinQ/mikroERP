@@ -3,6 +3,8 @@ import {Component, OnInit, HostListener, ViewChild} from '@angular/core';
 import { Employee } from '../_models/employee';
 import { EmployeeService } from '../_services/employee.service';
 import { MatTableDataSource } from '@angular/material';
+import { EmbeddedTemplateAst } from '@angular/compiler';
+import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-employees-table',
@@ -12,22 +14,20 @@ import { MatTableDataSource } from '@angular/material';
 
 export class EmployeesTableComponent implements OnInit {
   employees: Employee[];
-  listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'sex'];
+  public dataSource = new MatTableDataSource<Employee>();
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-    this.loadEmployeesToTable();
+   this.getEmployees();
   }
 
-
-  loadEmployeesToTable() {
-    this.employeeService.getEmployees().subscribe((employees: Employee[]) => {
-      this.employees = employees;
-      console.log(employees);
-    }, error => {
-      console.log(error);
+  public getEmployees = () => {
+    this.employeeService.getEmployees()
+    .subscribe(res => {
+      this.dataSource.data = res as Employee[];
     });
+    console.log(this.dataSource);
   }
 }
 

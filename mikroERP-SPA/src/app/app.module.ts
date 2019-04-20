@@ -14,7 +14,6 @@ import { EmployeeService } from './_services/employee.service';
 import { ChartsComponent } from './charts/charts.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { appRoutes } from './routes';
-import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeesTableComponent } from './employees-table/employees-table.component';
 
@@ -25,7 +24,6 @@ import { EmployeesTableComponent } from './employees-table/employees-table.compo
       NavComponent,
       ChartsComponent,
       EmployeeAddComponent,
-      HomeComponent,
       EmployeesTableComponent,
    ],
    imports: [
