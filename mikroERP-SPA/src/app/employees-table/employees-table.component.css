@@ -1,6 +1,5 @@
-mat-cell, .mat-cell {
-    display:block; 
-    min-height:auto; 
-    padding: 12px 0px 10px 10px;
-  }
-
+.full-width-table{
+  width: 90%;
+  margin-left:auto;
+  margin-right:auto;
+}
