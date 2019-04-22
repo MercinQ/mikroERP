@@ -28,6 +28,8 @@ namespace mikroERP.API.Helpers
                 opt => opt.MapFrom(src => src.Department.Location.FloorNr)
             );
 
+            CreateMap<EmployeeForTableDto,Employee>();
+
         }
     }
 }

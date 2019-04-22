@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -45,6 +46,17 @@ namespace mikroERP.API.Controllers
             return Ok();
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeForTableDto userForUpdate)
+        {
+            var employeeToUpdate = await _repo.GetEmployee(id);
+            _mapper.Map(userForUpdate,employeeToUpdate);
 
+            if(await _repo.SaveAll()){
+                return NoContent();
+            }
+
+            throw new Exception($"Updating user {id} failed on save");
+        }
     }
 }
