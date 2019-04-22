@@ -29,6 +29,7 @@ namespace mikroERP.API.Helpers
             );
 
             CreateMap<EmployeeForTableDto,Employee>();
+            CreateMap<EmployeeForAddEmployeeDto,Employee>();
 
         }
     }

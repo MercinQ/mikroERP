@@ -42,7 +42,7 @@ namespace mikroERP.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteEmployee(int id)
+        public IActionResult DeleteEmployee([FromBody]int id)
         {
             _repo.DeleteEmployee(id);
             return Ok();
@@ -60,27 +60,14 @@ namespace mikroERP.API.Controllers
 
             throw new Exception($"Updating user {id} failed on save");
         }
-        [HttpPost("addemployee")]
+        [HttpPost]
         public async Task<IActionResult> AddEmployee(EmployeeForAddEmployeeDto employeeForAddEmployeeDto)
         {  
-
-            var employeeToCreate = new Employee 
-            {
-                FirstName = employeeForAddEmployeeDto.FirstName,
-                LastName = employeeForAddEmployeeDto.LastName,
-                Sex = employeeForAddEmployeeDto.Sex,
-                Email = employeeForAddEmployeeDto.Email,
-                Wages = employeeForAddEmployeeDto.Wages,
-                DayOfEmployment = employeeForAddEmployeeDto.DayOfEmployment,
-                Phone = employeeForAddEmployeeDto.Phone,
-                DateOfBirth = employeeForAddEmployeeDto.DateOfBirth,
-                DepartmentId = (int)employeeForAddEmployeeDto.DepartmentId,
-                TransportId = (int)employeeForAddEmployeeDto.TransportId
-            };
+            var employeeToCreate = _mapper.Map<Employee>(employeeForAddEmployeeDto);
 
             var createdEmployee = await _repo.AddEmployee(employeeToCreate);
 
-            return StatusCode(201);   
+            return StatusCode(201);  
         }
 
     }

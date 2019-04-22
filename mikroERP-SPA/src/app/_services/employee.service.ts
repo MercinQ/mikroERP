@@ -26,6 +26,6 @@ constructor(private http: HttpClient) { }
   }
 
   addEmployee(model: any) {
-    return this.http.post(this.baseUrl + 'employees/addemployee', model);
+    return this.http.post(this.baseUrl + 'employees', model);
   }
 }
