@@ -10,5 +10,6 @@ namespace mikroERP.API.Data
         Task<List<Employee>> GetEmployees();
         void DeleteEmployee(int id);
         Task<bool> SaveAll();
+        Task<Employee> AddEmployee( Employee employee );
     }
 }

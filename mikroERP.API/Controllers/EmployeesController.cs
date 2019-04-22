@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using mikroERP.API.Data;
 using mikroERP.API.Dtos;
+using mikroERP.API.Models;
 
 namespace mikroERP.API.Controllers
 {
@@ -30,6 +31,7 @@ namespace mikroERP.API.Controllers
 
             return Ok(employeeToReturn);
         }
+
         [HttpGet]
         public async Task<IActionResult> GetEmployees()
         {
@@ -58,5 +60,28 @@ namespace mikroERP.API.Controllers
 
             throw new Exception($"Updating user {id} failed on save");
         }
+        [HttpPost("addemployee")]
+        public async Task<IActionResult> AddEmployee(EmployeeForAddEmployeeDto employeeForAddEmployeeDto)
+        {  
+
+            var employeeToCreate = new Employee 
+            {
+                FirstName = employeeForAddEmployeeDto.FirstName,
+                LastName = employeeForAddEmployeeDto.LastName,
+                Sex = employeeForAddEmployeeDto.Sex,
+                Email = employeeForAddEmployeeDto.Email,
+                Wages = employeeForAddEmployeeDto.Wages,
+                DayOfEmployment = employeeForAddEmployeeDto.DayOfEmployment,
+                Phone = employeeForAddEmployeeDto.Phone,
+                DateOfBirth = employeeForAddEmployeeDto.DateOfBirth,
+                DepartmentId = (int)employeeForAddEmployeeDto.DepartmentId,
+                TransportId = (int)employeeForAddEmployeeDto.TransportId
+            };
+
+            var createdEmployee = await _repo.AddEmployee(employeeToCreate);
+
+            return StatusCode(201);   
+        }
+
     }
 }

@@ -20,6 +20,12 @@ namespace mikroERP.API.Data
             _context.Employees.Remove(employee);
 
             _context.SaveChanges();
+        public async Task<Employee> AddEmployee( Employee employee)
+        {
+           await _context.Employees.AddAsync(employee);
+           await _context.SaveChangesAsync();
+
+           return employee;
         }
 
         public async Task<Employee> GetEmployee(int id)
@@ -44,6 +50,7 @@ namespace mikroERP.API.Data
         {
             return await _context.SaveChangesAsync() > 0;
         }
+        
 
     }
 }
