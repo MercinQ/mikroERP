@@ -2,7 +2,7 @@
 import {Component, OnInit, HostListener, ViewChild} from '@angular/core';
 import { Employee } from '../_models/employee';
 import { EmployeeService } from '../_services/employee.service';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { EmbeddedTemplateAst } from '@angular/compiler';
 import { DataSource } from '@angular/cdk/table';
 
@@ -13,6 +13,7 @@ import { DataSource } from '@angular/cdk/table';
 })
 
 export class EmployeesTableComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   employees: Employee[];
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'sex', 'wages', 'dayOfEmployment',
    'phone', 'dateOfBirth', 'nameOfDepartment', 'roomNr', 'floorNr', 'nameOfTransport', 'email'];
@@ -21,6 +22,7 @@ export class EmployeesTableComponent implements OnInit {
 
   ngOnInit() {
    this.getEmployees();
+   this.dataSource.paginator = this.paginator;
   }
 
   public getEmployees = () => {
@@ -28,7 +30,6 @@ export class EmployeesTableComponent implements OnInit {
     .subscribe(res => {
       this.dataSource.data = res as Employee[];
     });
-    console.log(this.dataSource);
   }
 }
 
