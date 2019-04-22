@@ -14,13 +14,15 @@ namespace mikroERP.API.Data
             _context = context;
         }
 
+    
         public void DeleteEmployee(int id)
         {
             var employee = _context.Employees.Find(id);
             _context.Employees.Remove(employee);
 
             _context.SaveChanges();
-        public async Task<Employee> AddEmployee( Employee employee)
+        }
+        public async Task<Employee> AddEmployee(Employee employee)
         {
            await _context.Employees.AddAsync(employee);
            await _context.SaveChangesAsync();
@@ -50,7 +52,6 @@ namespace mikroERP.API.Data
         {
             return await _context.SaveChangesAsync() > 0;
         }
-        
-
+           
     }
 }
