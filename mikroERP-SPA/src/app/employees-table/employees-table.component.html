@@ -1,5 +1,6 @@
-<mat-table class="lessons-table mat-elevation-z8 full-width-table" [dataSource]="dataSource">
-
+<div class="mat-elevation-z8 employee-table">
+<table mat-table class="full-width-table table-fixed table-responsive" [dataSource]="dataSource">
+        
   <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef>Id.</mat-header-cell>
       <mat-cell *matCellDef="let lesson">{{lesson.id}}</mat-cell>
@@ -67,11 +68,11 @@
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
+</table>
   <mat-paginator #paginator
       [length]="dataSource.data.length"
       [pageIndex]="0"
       [pageSize]=5
       [pageSizeOptions]="[5, 10, 15, 20]">
   </mat-paginator>
-</mat-table>
+</div>

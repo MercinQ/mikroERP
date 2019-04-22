@@ -2,3 +2,12 @@ i.far.fa-address-card
 {
     margin-right: 10px;
 }
+body > app-root > app-nav > nav 
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+nav 
+{
+    width: 100%;
+}
