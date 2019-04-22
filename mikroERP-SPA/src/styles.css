@@ -2,7 +2,8 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -22,3 +23,4 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #31425e; 
 }
+a { color: inherit; } 

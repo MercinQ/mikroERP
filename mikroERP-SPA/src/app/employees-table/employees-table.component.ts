@@ -5,6 +5,7 @@ import { EmployeeService } from '../_services/employee.service';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { EmbeddedTemplateAst } from '@angular/compiler';
 import { DataSource } from '@angular/cdk/table';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-employees-table',
@@ -15,9 +16,9 @@ import { DataSource } from '@angular/cdk/table';
 export class EmployeesTableComponent implements OnInit {
   employees: Employee[];
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'sex', 'wages', 'dayOfEmployment',
-   'phone', 'dateOfBirth', 'nameOfDepartment', 'roomNr', 'floorNr', 'nameOfTransport', 'email'];
+   'phone', 'dateOfBirth', 'nameOfDepartment', 'roomNr', 'floorNr', 'nameOfTransport', 'email', 'edit', 'delete'];
   public dataSource = new MatTableDataSource<Employee>();
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private alertify: AlertifyService) { }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -32,6 +33,15 @@ export class EmployeesTableComponent implements OnInit {
     .subscribe(res => {
       this.dataSource.data = res as Employee[];
     });
+  }
+
+  deleteEmployee(rowId: number) {
+      this.alertify.confirm('Are you sure you want to delete this employee?', () =>
+      this.employeeService.deleteEmployee(rowId).subscribe(next => {
+        this.ngOnInit();
+      }, error => {
+        this.alertify.error(error);
+      }));
   }
 }
 

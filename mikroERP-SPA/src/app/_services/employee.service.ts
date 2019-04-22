@@ -19,4 +19,8 @@ constructor(private http: HttpClient) { }
     return this.http.get<Employee[]>(this.baseUrl + 'employees');
   }
 
+  deleteEmployee(id: number) {
+    return this.http.delete(this.baseUrl + 'employees/' + id);
+  }
+
 }

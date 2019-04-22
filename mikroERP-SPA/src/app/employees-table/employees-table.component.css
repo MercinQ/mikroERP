@@ -4,11 +4,15 @@
   margin-right: auto;
 }
 .mat-header-cell {
-  padding-right: 110px;
+  padding-right: 120px;
 }
 .mat-cell {
-  padding-right: 110px;
+  padding-right: 120px;
 }
 th.mat-sort-header-sorted {
   color: black;
+}
+.fas:hover
+{
+color: #4c3851;
 }

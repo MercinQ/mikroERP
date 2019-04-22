@@ -65,6 +65,17 @@
       <mat-header-cell *matHeaderCellDef>Name of Transport</mat-header-cell>
       <mat-cell *matCellDef="let employee">{{employee.nameOfTransport}}</mat-cell>
   </ng-container>
+ 
+  <ng-container matColumnDef="edit" >
+    <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+    <mat-cell *matCellDef="let employee"><a [routerLink]="['/home']"><i class="fas fa-edit fa-2x"></i></a></mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="delete" >
+    <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+    <mat-cell *matCellDef="let employee"><a  [routerLink]="['/home']"><i class="fas fa-user-minus fa-2x" 
+        (click)="deleteEmployee(employee.id)" ></i></a></mat-cell>
+  </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

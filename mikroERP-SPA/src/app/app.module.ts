@@ -16,6 +16,8 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeesTableComponent } from './employees-table/employees-table.component';
+import { AlertifyService } from './_services/alertify.service';
+
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { EmployeesTableComponent } from './employees-table/employees-table.compo
    providers: [
       EmployeeService,
       MatDatepickerModule,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
