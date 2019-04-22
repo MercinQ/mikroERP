@@ -37,5 +37,14 @@ namespace mikroERP.API.Controllers
 
             return Ok(employeesToReturn);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEmployee(int id)
+        {
+             _repo.DeleteEmployee(id);
+            return Ok();
+        }
+
+
     }
 }
