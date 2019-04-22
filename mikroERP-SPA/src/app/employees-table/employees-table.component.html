@@ -1,69 +1,69 @@
 <div class="mat-elevation-z8 employee-table">
-<table mat-table class="full-width-table table-fixed table-responsive" [dataSource]="dataSource">
+<table mat-table matSort class="full-width-table table-fixed table-responsive" [dataSource]="dataSource">
         
   <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>Id.</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.id}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id.</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.id}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="firstName">
-      <mat-header-cell *matHeaderCellDef>FirstName</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.firstName}}</mat-cell>
+  <ng-container matColumnDef="firstName" >
+      <mat-header-cell *matHeaderCellDef >FirstName</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.firstName}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="lastName">
-      <mat-header-cell *matHeaderCellDef>LastName</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.lastName}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef >LastName</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.lastName}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="sex">
-      <mat-header-cell *matHeaderCellDef>Sex</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.sex}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Sex</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.sex}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.email}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef >Email</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.email}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="wages">
-      <mat-header-cell *matHeaderCellDef>Wage</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.wages}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Wage</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.wages}}</mat-cell>
   </ng-container>
   
   <ng-container matColumnDef="dayOfEmployment">
-      <mat-header-cell *matHeaderCellDef>Day of employmnet</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.dayOfEmployment | date}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Day of employmnet</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.dayOfEmployment | date}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.phone}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef >Phone</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.phone}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="dateOfBirth">
-      <mat-header-cell *matHeaderCellDef>Date of Birth</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.dateOfBirth | date}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.dateOfBirth | date}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="nameOfDepartment">
-      <mat-header-cell *matHeaderCellDef>Name Of Department</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.nameOfDepartment}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name Of Department</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.nameOfDepartment}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="roomNr">
-      <mat-header-cell *matHeaderCellDef>Room nr</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.roomNr}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef >Room nr</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.roomNr}}</mat-cell>
   </ng-container>
   
   <ng-container matColumnDef="floorNr">
-      <mat-header-cell *matHeaderCellDef>Floor nr</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.floorNr}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef >Floor nr</mat-header-cell>
+      <mat-cell *matCellDef="let employee">{{employee.floorNr}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="nameOfTransport">
+  <ng-container matColumnDef="nameOfTransport" >
       <mat-header-cell *matHeaderCellDef>Name of Transport</mat-header-cell>
-      <mat-cell *matCellDef="let lesson">{{lesson.nameOfTransport}}</mat-cell>
+      <mat-cell *matCellDef="let employee">{{employee.nameOfTransport}}</mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

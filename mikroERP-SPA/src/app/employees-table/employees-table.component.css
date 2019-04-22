@@ -9,3 +9,6 @@
 .mat-cell {
   padding-right: 110px;
 }
+th.mat-sort-header-sorted {
+  color: black;
+}
