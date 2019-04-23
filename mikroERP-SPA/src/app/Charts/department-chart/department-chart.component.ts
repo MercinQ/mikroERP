@@ -13,6 +13,7 @@ export class DepartmentChartComponent implements OnInit {
   departmentCount: DepartmetCount;
   constructor(private chartService: ChartService) { }
   ngOnInit() {
+    this.getDepartmentCount();
   }
 
   getDepartmentCount() {
@@ -23,7 +24,7 @@ export class DepartmentChartComponent implements OnInit {
       data: {
        labels: ['Management', 'Logistics Department', 'Administration Department', 'Marketing department'],
        datasets: [{
-           label: '# of Votes',
+           label: 'Employees',
            data: [9, 7, 3, 4],
            backgroundColor: [
                'rgba(255, 99, 132, 0.2)',

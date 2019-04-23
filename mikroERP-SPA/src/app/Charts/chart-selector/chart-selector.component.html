@@ -5,7 +5,7 @@
         <div (click)="chartSelect()">
       <mat-option value="none">None</mat-option>
       <mat-option value="option1">Gender Pie Chart</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
+      <mat-option value="option2">Department Bar Chart</mat-option>
       <mat-option value="option3">Option 3</mat-option>
     </div>
     </mat-select>
@@ -15,4 +15,8 @@
 
 <div *ngIf="chartGenderPie">
   <app-gender-chart></app-gender-chart>
+</div>
+
+<div *ngIf="chartDepartmentBar">
+  <app-department-chart></app-department-chart>
 </div>
