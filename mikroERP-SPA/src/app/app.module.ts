@@ -11,7 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './_services/employee.service';
-import { ChartsComponent } from './charts/charts.component';
+import { ChartsComponent } from './Charts/genderChart/charts.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +19,9 @@ import { EmployeesTableComponent } from './employees-table/employees-table.compo
 import { AlertifyService } from './_services/alertify.service';
 import { ChartService } from './_services/chart.service';
 import { EmployeeUpdateComponent } from './employee-update/employee-update.component';
+import { ChartSelectorComponent } from './Charts/chart-selector/chart-selector.component';
+
+
 
 
 
@@ -29,7 +32,8 @@ import { EmployeeUpdateComponent } from './employee-update/employee-update.compo
       ChartsComponent,
       EmployeeAddComponent,
       EmployeesTableComponent,
-      EmployeeUpdateComponent
+      EmployeeUpdateComponent,
+      ChartSelectorComponent
    ],
    imports: [
       BrowserModule,

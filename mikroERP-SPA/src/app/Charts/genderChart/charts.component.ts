@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartService } from '../_services/chart.service';
-import { GenderCount } from '../_models/genderCount';
+import { ChartService } from '../../_services/chart.service';
+import { GenderCount } from '../../_models/genderCount';
 import { Chart } from 'chart.js';
 
 @Component({
-  selector: 'app-charts',
+  selector: 'app-gender-chart',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css']
 })
