@@ -27,7 +27,7 @@ namespace mikroERP.API.Controllers
         public async Task<IActionResult> GetEmployee(int id)
         {
             var employee = await _repo.GetEmployee(id);
-            var employeeToReturn = _mapper.Map<EmployeeForTableDto>(employee);
+            var employeeToReturn = _mapper.Map<EmployeeForAddEmployeeDto>(employee);
 
             return Ok(employeeToReturn);
         }
@@ -49,7 +49,7 @@ namespace mikroERP.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmployee(int id, EmployeeForTableDto userForUpdate)
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeForAddEmployeeDto userForUpdate)
         {
             var employeeToUpdate = await _repo.GetEmployee(id);
             _mapper.Map(userForUpdate,employeeToUpdate);
@@ -63,8 +63,8 @@ namespace mikroERP.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEmployee(EmployeeForAddEmployeeDto employeeForAddEmployeeDto)
         {  
+            
             var employeeToCreate = _mapper.Map<Employee>(employeeForAddEmployeeDto);
-
             var createdEmployee = await _repo.AddEmployee(employeeToCreate);
 
             return StatusCode(201);  

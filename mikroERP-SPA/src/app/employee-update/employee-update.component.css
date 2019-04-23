@@ -1,0 +1,19 @@
+.form-container {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+  
+.form-container > * {
+    width: 100%;
+}
+
+.form-employee{
+  display: flex;
+  flex-direction: column;
+}

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmployeeService {
    baseUrl = environment.apiUrl;
-
+   employeeId: number;
 constructor(private http: HttpClient) { }
 
   getEmployee(id: number): Observable<Employee> {
@@ -27,4 +27,17 @@ constructor(private http: HttpClient) { }
   addEmployee(model: any) {
     return this.http.post(this.baseUrl + 'employees', model);
   }
+
+  updateEmployee(model: any) {
+    return this.http.put(this.baseUrl + 'employees/' + model.id, model);
+  }
+
+  setEmployeeId(rowId: number) {
+    this.employeeId = rowId;
+  }
+
+  getEmployeeId() {
+    return this.employeeId;
+  }
+
 }

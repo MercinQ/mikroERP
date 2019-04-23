@@ -68,7 +68,8 @@
  
   <ng-container matColumnDef="edit" >
     <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
-    <mat-cell *matCellDef="let employee"><a [routerLink]="['/home']"><i class="fas fa-edit fa-2x"></i></a></mat-cell>
+    <mat-cell *matCellDef="let employee"><a [routerLink]="['/employee_update']"><i class="fas fa-edit fa-2x"
+        (click)="setEmployeeId(employee.id)"></i></a></mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="delete" >
