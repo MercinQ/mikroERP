@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,6 +21,11 @@ namespace mikroERP.API.Data
         {
             int manCount = _context.Employees.Where(e => e.Sex == "F").Count();
             return  manCount;
+        }
+        public List<DateTime> GetBirthday()
+        {
+            List<DateTime> birthday = _context.Employees.Select(e => e.DateOfBirth).ToList();
+            return birthday;
         }
         
     }
