@@ -49,7 +49,7 @@ namespace mikroERP.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmployee(int id, EmployeeForTableDto userForUpdate)
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeForAddEmployeeDto userForUpdate)
         {
             var employeeToUpdate = await _repo.GetEmployee(id);
             _mapper.Map(userForUpdate,employeeToUpdate);
