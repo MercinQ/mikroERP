@@ -42,7 +42,7 @@ namespace mikroERP.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteEmployee([FromBody]int id)
+        public IActionResult DeleteEmployee(int id)
         {
             _repo.DeleteEmployee(id);
             return Ok();
