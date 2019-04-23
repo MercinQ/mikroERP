@@ -24,6 +24,7 @@
     "alertifyjs": "^1.11.2",
     "angular-material": "^1.1.18",
     "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",

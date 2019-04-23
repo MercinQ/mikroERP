@@ -32,6 +32,7 @@ namespace mikroERP.API
             services.AddAutoMapper();
             services.AddCors();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IChartRepository, ChartRepository>();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().AddJsonOptions(
             options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
