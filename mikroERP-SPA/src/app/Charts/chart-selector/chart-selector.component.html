@@ -1,0 +1,22 @@
+<div class="center">
+  <mat-form-field >
+    <mat-label>Select a Chart</mat-label>
+    <mat-select [(value)]="selected"  >
+        <div (click)="chartSelect()">
+      <mat-option value="none">None</mat-option>
+      <mat-option value="option1">Gender Pie Chart</mat-option>
+      <mat-option value="option2">Department Bar Chart</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </div>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div *ngIf="chartGenderPie">
+  <app-gender-chart></app-gender-chart>
+</div>
+
+<div *ngIf="chartDepartmentBar">
+  <app-department-chart></app-department-chart>
+</div>

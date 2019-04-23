@@ -6,5 +6,9 @@ namespace mikroERP.API.Data
     {
          int GetWomanCount();
          int GetManCount();
+         int GetManagmentDepCount();
+         int GetLogisticsDepCount();
+         int GetAdministrationDepCount();
+         int GetMarketingDepCount();
     }
 }

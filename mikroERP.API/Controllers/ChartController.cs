@@ -14,7 +14,6 @@ namespace mikroERP.API.Controllers
             _repo = repo;
         }
 
-
         [HttpGet]
         [Route("GetGenderCount")]
         public IActionResult GetGenderCount()
@@ -27,5 +26,21 @@ namespace mikroERP.API.Controllers
 
             return Ok(GenderCountChartDto);
         }
+
+        [HttpGet]
+        [Route("GetDepartmetsCount")]
+        public IActionResult GetDepartmetsCount()
+        {
+            var DepartmentCountChartDto = new DepartmentCountChartDto()
+            {
+                ManagmentDepCount = _repo.GetManagmentDepCount(),
+                LogisticsDepCount = _repo.GetLogisticsDepCount(),
+                AdministrationDepCount = _repo.GetAdministrationDepCount(),
+                MarketingDepCount = _repo.GetMarketingDepCount()
+            };
+
+            return Ok(DepartmentCountChartDto);
+        }
+
     }
 }
