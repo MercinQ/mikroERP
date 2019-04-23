@@ -11,15 +11,15 @@
        [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" routerLinkActive="active" >
-        <a class="nav-link" [routerLink]="['/employee_table']" >Tabela Pracowników</a>
+        <a class="nav-link" [routerLink]="['/employee_table']" ><i class="fas fa-table"></i> Employee Table</a>
       </li>
 
       <li class="nav-item"  routerLinkActive="active" >
-        <a class="nav-link" [routerLink]="['/charts']">Wykresy</a>
+        <a class="nav-link" [routerLink]="['/charts']"><i class="fas fa-chart-bar"></i> Charts</a>
       </li>
 
       <li class="nav-item" routerLinkActive="active" >
-        <a class="nav-link" [routerLink]="['/employee_add']" >Dodaj Pracownika</a>
+        <a class="nav-link" [routerLink]="['/employee_add']" ><i class="fas fa-user-plus"></i> Add Employee</a>
       </li>
     </ul>
   </div>

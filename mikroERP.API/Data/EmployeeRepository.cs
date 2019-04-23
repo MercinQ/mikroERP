@@ -14,7 +14,6 @@ namespace mikroERP.API.Data
             _context = context;
         }
 
-    
         public void DeleteEmployee(int id)
         {
             var employee = _context.Employees.Find(id);
