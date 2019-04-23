@@ -14,8 +14,8 @@ export class ChartSelectorComponent implements OnInit {
   ngOnInit() {
   }
 
-  chartSelect(){
-    switch(this.selected){
+  chartSelect() {
+    switch (this.selected) {
       case 'none': {
         this.chartGenderPie = false;
         break;
