@@ -43,5 +43,11 @@ export class EmployeesTableComponent implements OnInit {
         this.alertify.error(error);
       }));
   }
+
+  // przekazuje id do komponentu employee-update
+  setEmployeeId(rowId: number) {
+    this.employeeService.setEmployeeId(rowId);
+  }
+
 }
 

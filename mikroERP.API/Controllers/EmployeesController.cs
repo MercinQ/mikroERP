@@ -42,7 +42,7 @@ namespace mikroERP.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteEmployee([FromBody]int id)
+        public IActionResult DeleteEmployee(int id)
         {
             _repo.DeleteEmployee(id);
             return Ok();
@@ -63,8 +63,8 @@ namespace mikroERP.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEmployee(EmployeeForAddEmployeeDto employeeForAddEmployeeDto)
         {  
+            
             var employeeToCreate = _mapper.Map<Employee>(employeeForAddEmployeeDto);
-
             var createdEmployee = await _repo.AddEmployee(employeeToCreate);
 
             return StatusCode(201);  

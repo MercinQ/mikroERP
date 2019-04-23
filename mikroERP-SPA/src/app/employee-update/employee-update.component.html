@@ -1,14 +1,14 @@
 <div class="form-container">
 
-  <h3>Add employee</h3><br/>
+  <h3>Update {{model.firstName}} {{model.lastName}} data</h3><br/>
 
-<form #addForm="ngForm" (ngSubmit)="addEmployee(); addForm.reset()" class="form-employee">
+<form #addForm="ngForm" (ngSubmit)="updateEmployee()" class="form-employee">
   <mat-form-field >
-    <input  name="firstname" type="text" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" matInput placeholder="Name" required [(ngModel)]="model.firstname">
+    <input  name="firstname" type="text" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" matInput placeholder="Name" required [(ngModel)]="model.firstName">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Lastname" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" type="text" name="lastname" required [(ngModel)]="model.lastname">
+    <input matInput placeholder="Lastname" pattern="[^\x00-\x7F]*[A-Za-z]+[^\x00-\x7F]*[A-Za-z]*[^\x00-\x7F]*" type="text" name="Lastname" required [(ngModel)]="model.lastName">
   </mat-form-field>
 
   <mat-form-field>

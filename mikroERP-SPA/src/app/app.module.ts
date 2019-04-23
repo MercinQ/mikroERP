@@ -17,6 +17,7 @@ import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeesTableComponent } from './employees-table/employees-table.component';
 import { AlertifyService } from './_services/alertify.service';
+import { EmployeeUpdateComponent } from './employee-update/employee-update.component';
 
 
 
@@ -27,6 +28,7 @@ import { AlertifyService } from './_services/alertify.service';
       ChartsComponent,
       EmployeeAddComponent,
       EmployeesTableComponent,
+      EmployeeUpdateComponent
    ],
    imports: [
       BrowserModule,
@@ -44,7 +46,7 @@ import { AlertifyService } from './_services/alertify.service';
       FormsModule,
       BrowserAnimationsModule,
       HttpClientModule,
-      RouterModule.forRoot(appRoutes),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       EmployeeService,
