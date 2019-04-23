@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../_services/employee.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-employee-add',
@@ -9,7 +10,7 @@ import { EmployeeService } from '../_services/employee.service';
 export class EmployeeAddComponent implements OnInit {
   model: any = {};
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private alertify: AlertifyService) { }
 
   ngOnInit() {
   }
@@ -17,7 +18,7 @@ export class EmployeeAddComponent implements OnInit {
   addEmployee() {
     console.log(this.model);
     this.employeeService.addEmployee(this.model).subscribe(() => {
-      console.log('Employee added');
+      this.alertify.success('Employee added');
     }, error => {
       console.log(error);
     });
