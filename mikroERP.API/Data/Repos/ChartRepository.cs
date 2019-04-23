@@ -12,11 +12,36 @@ namespace mikroERP.API.Data
         {
             _context = context;
         }
+
+        public int GetManagmentDepCount()
+        {
+            int managmentDepCount = _context.Employees.Where(e => e.DepartmentId == 1).Count();
+            return managmentDepCount;
+        }
+        public int GetLogisticsDepCount()
+        {
+            int logisticsDepCount = _context.Employees.Where(e => e.DepartmentId == 2).Count();
+            return logisticsDepCount;
+        }
+
+        public int GetAdministrationDepCount()
+        {
+            int administrationDepCount = _context.Employees.Where(e => e.DepartmentId == 3).Count();
+            return administrationDepCount;
+        }
+
+        public int GetMarketingDepCount()
+        {
+            int marketingDepCount = _context.Employees.Where(e => e.DepartmentId == 4).Count();
+            return marketingDepCount;
+        }
+
         public int GetManCount()
         {
             int manCount = _context.Employees.Where(e => e.Sex == "M").Count();
             return  manCount;
         }
+
         public int GetWomanCount()
         {
             int manCount = _context.Employees.Where(e => e.Sex == "F").Count();
