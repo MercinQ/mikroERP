@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartSelectorComponent implements OnInit {
   selected: string;
+  chartGenderPie = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  chartSelect(){
+    switch(this.selected){
+      case 'none': {
+        this.chartGenderPie = false;
+        break;
+      }
+      case 'option1': {
+        this.chartGenderPie = true;
+        break;
+      }
+      case 'option2': {
+        // this.chartGenderPie = true;
+        break;
+      }
+    }
   }
 
 }

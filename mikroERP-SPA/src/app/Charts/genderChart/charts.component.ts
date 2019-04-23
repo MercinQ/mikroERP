@@ -12,7 +12,8 @@ export class ChartsComponent implements OnInit {
 
   PieChart = [];
   genderCount: GenderCount;
-  selected: string;
+  selected: number;
+  GenderPieChart = false;
 
   constructor(private chartService: ChartService) { }
 
@@ -57,6 +58,6 @@ export class ChartsComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-
   }
+
 }
