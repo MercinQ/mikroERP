@@ -1,5 +1,6 @@
+<div class="center">
 <mat-form-field>
-  <mat-label>Select an option</mat-label>
+  <mat-label>Select a Chart</mat-label>
   <mat-select [(value)]="selected">
     <mat-option>None</mat-option>
     <mat-option value="option1">Gender Pie Chart</mat-option>
@@ -7,7 +8,7 @@
     <mat-option value="option3">Option 3</mat-option>
   </mat-select>
 </mat-form-field>
-
+</div>
 <div class="chart" style="text-align:center" *ngIf="">
 <canvas id="pieChart"></canvas>
 </div>
