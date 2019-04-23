@@ -17,6 +17,7 @@ import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeesTableComponent } from './employees-table/employees-table.component';
 import { AlertifyService } from './_services/alertify.service';
+import { ChartService } from './_services/chart.service';
 
 
 
@@ -49,7 +50,8 @@ import { AlertifyService } from './_services/alertify.service';
    providers: [
       EmployeeService,
       MatDatepickerModule,
-      AlertifyService
+      AlertifyService,
+      ChartService
    ],
    bootstrap: [
       AppComponent

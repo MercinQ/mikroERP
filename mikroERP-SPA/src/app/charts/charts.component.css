@@ -1,0 +1,14 @@
+.chart
+{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    width: 60%;
+}
+@media only screen and (max-width: 800px) {
+    .chart
+    {
+        padding-top: 10%;
+        width: 100%;
+    }
+  }

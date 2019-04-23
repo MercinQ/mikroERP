@@ -20,5 +20,6 @@ namespace mikroERP.API.Data
             int manCount = _context.Employees.Where(e => e.Sex == "F").Count();
             return  manCount;
         }
+        
     }
 }
