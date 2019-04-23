@@ -27,6 +27,7 @@ export class EmployeeUpdateComponent implements OnInit {
     this.employeeService.getEmployee(this.employeeId)
     .subscribe(model => {
       this.model = model;
+      this.setSubIdToString(this.model);
       this.NameOfEditedEmployee = this.model.firstName + ' ' + this.model.lastName;
       this.alertify.message('Edit ' + this.NameOfEditedEmployee);
       console.log(this.model);
@@ -45,7 +46,50 @@ export class EmployeeUpdateComponent implements OnInit {
     });
   }
 
-  setSubId(model: any) {
-    
+  setSubIdToString(model: any) {
+    switch (model.departmentId) {
+      case 1: {
+        model.departmentId = '1';
+        break;
+      }
+      case 2: {
+        model.departmentId = '2';
+        break;
+      }
+      case 3: {
+        model.departmentId = '3';
+        break;
+      }
+      case 4: {
+        model.departmentId = '4';
+        break;
+      }
+    }
+    switch (model.transportId) {
+      case 1: {
+        model.transportId = '1';
+        break;
+      }
+      case 2: {
+        model.transportId = '2';
+        break;
+      }
+      case 3: {
+        model.transportId = '3';
+        break;
+      }
+      case 4: {
+        model.transportId = '4';
+        break;
+      }
+      case 5: {
+        model.transportId = '5';
+        break;
+      }
+      case 6: {
+        model.transportId = '6';
+        break;
+      }
+    }
   }
 }

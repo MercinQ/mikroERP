@@ -27,7 +27,7 @@ namespace mikroERP.API.Controllers
         public async Task<IActionResult> GetEmployee(int id)
         {
             var employee = await _repo.GetEmployee(id);
-            var employeeToReturn = _mapper.Map<EmployeeForTableDto>(employee);
+            var employeeToReturn = _mapper.Map<EmployeeForAddEmployeeDto>(employee);
 
             return Ok(employeeToReturn);
         }
