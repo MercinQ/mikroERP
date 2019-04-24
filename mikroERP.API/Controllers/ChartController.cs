@@ -57,6 +57,28 @@ namespace mikroERP.API.Controllers
             return Ok(departmentAvgEarningDto);
         }
 
+        [HttpGet]
+        [Route("GetNumberOfEmploymentsInMonths")]
+        public IActionResult GetNumberOfEmploymentsInMonths()
+        {
+            int[] numberOfEmployedInMonths = _repo.GetNumberOfEmploymentsInMonths();
+            var numberOfEmployedInMonthsToReturn = new NumberOfEmploymentsInMonthsDto()
+            {
+                EmployedInJan = numberOfEmployedInMonths[0],
+                EmployedInFeb = numberOfEmployedInMonths[1],
+                EmployedInMarch = numberOfEmployedInMonths[2],
+                EmployedInApril = numberOfEmployedInMonths[3],
+                EmployedInMay = numberOfEmployedInMonths[4],
+                EmployedInJune = numberOfEmployedInMonths[5],
+                EmployedInJuly = numberOfEmployedInMonths[6],
+                EmployedInAug = numberOfEmployedInMonths[7],
+                EmployedInSep = numberOfEmployedInMonths[8],
+                EmployedInOct = numberOfEmployedInMonths[9],
+                EmployedInNov = numberOfEmployedInMonths[10],
+                EmployedInDec = numberOfEmployedInMonths[11]
+            };
+            return Ok(numberOfEmployedInMonthsToReturn);
+        }
 
     }
 }

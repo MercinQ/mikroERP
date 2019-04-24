@@ -14,6 +14,7 @@ namespace mikroERP.API.Data
          double GetLogisticsAvgEarnings();
          double GetAdministrationAvgEarnings();
          double GetMarketingAvgEarnings();
+         int[] GetNumberOfEmploymentsInMonths();
 
     }
 }

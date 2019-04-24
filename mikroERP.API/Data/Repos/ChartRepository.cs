@@ -92,5 +92,19 @@ namespace mikroERP.API.Data
 
             return marketingAvgearnings;
         }
+
+        public int[] GetNumberOfEmploymentsInMonths()
+        {
+            int[] numberOfEmployedInMonths = new int[12];
+
+            for (int i = 1; i <= 12; i++)
+            {
+               int numberInMonth = _context.Employees
+               .Where(e => e.DayOfEmployment.Month == i)
+               .Count();
+                numberOfEmployedInMonths[i - 1] = numberInMonth;
+            }
+            return numberOfEmployedInMonths;
+        }
     }
 }

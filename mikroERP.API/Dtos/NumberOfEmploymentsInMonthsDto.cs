@@ -1,6 +1,6 @@
 namespace mikroERP.API.Dtos
 {
-    public class NumberOfEmployedInMonthDto
+    public class NumberOfEmploymentsInMonthsDto
     {
         public int EmployedInJan { get; set; }
         public int EmployedInFeb { get; set; }

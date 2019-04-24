@@ -5,6 +5,7 @@ import { GenderCount } from '../_models/genderCount';
 import { Observable } from 'rxjs';
 import { DepartmetCount } from '../_models/departmetCount';
 import { DepartmentAvgEarning } from '../_models/departmentAvgEarning';
+import { NumberOfEmploymentsInMonths } from '../_models/numberOfEmploymentsInMonths';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class ChartService {
 
   getDepartmentAvgEarnigs(): Observable<DepartmentAvgEarning> {
     return this.http.get<DepartmentAvgEarning>(this.baseUrl + 'Chart/GetDepartmetsAvgEarnings');
+  }
+
+  getNumberOfEmploymentsInMonths(): Observable<NumberOfEmploymentsInMonths> {
+    return this.http.get<NumberOfEmploymentsInMonths>(this.baseUrl + 'Chart/GetNumberOfEmploymentsInMonths');
   }
 }
