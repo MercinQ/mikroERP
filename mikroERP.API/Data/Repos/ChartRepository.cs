@@ -52,6 +52,45 @@ namespace mikroERP.API.Data
             List<DateTime> birthday = _context.Employees.Select(e => e.DateOfBirth).ToList();
             return birthday;
         }
-        
+
+        public double GetManagmentAvgEarnings()
+        {
+            double managmentTotalIncome = _context.Employees
+            .Where(e => e.DepartmentId == 1)
+            .Sum(e => e.Wages);
+            double managmentAvgearnings = managmentTotalIncome / GetManagmentDepCount();
+
+            return managmentAvgearnings;
+        }
+
+        public double GetLogisticsAvgEarnings()
+        {
+            double logisticsTotalIncome = _context.Employees
+            .Where(e => e.DepartmentId == 2)
+            .Sum(e => e.Wages);
+            double logisticsAvgearnings = logisticsTotalIncome / GetLogisticsDepCount();
+
+            return logisticsAvgearnings;
+        }
+
+        public double GetAdministrationAvgEarnings()
+        {
+            double administrationTotalIncome = _context.Employees
+            .Where(e => e.DepartmentId == 3)
+            .Sum(e => e.Wages);
+            double administrationAvgearnings = administrationTotalIncome / GetAdministrationDepCount();
+
+            return administrationAvgearnings;
+        }
+
+        public double GetMarketingAvgEarnings()
+        {
+            double marketingTotalIncome = _context.Employees
+            .Where(e => e.DepartmentId == 4)
+            .Sum(e => e.Wages);
+            double marketingAvgearnings = marketingTotalIncome / GetMarketingDepCount();
+
+            return marketingAvgearnings;
+        }
     }
 }

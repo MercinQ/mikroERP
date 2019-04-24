@@ -18,20 +18,20 @@ namespace mikroERP.API.Controllers
         [Route("GetGenderCount")]
         public IActionResult GetGenderCount()
         {
-            var GenderCountChartDto = new GenderCountChartDto()
+            var genderCountChartDto = new GenderCountChartDto()
             {
                 MenCount = _repo.GetManCount(),
                 WomanCount = _repo.GetWomanCount()
             };
 
-            return Ok(GenderCountChartDto);
+            return Ok(genderCountChartDto);
         }
 
         [HttpGet]
         [Route("GetDepartmetsCount")]
         public IActionResult GetDepartmetsCount()
         {
-            var DepartmentCountChartDto = new DepartmentCountChartDto()
+            var departmentCountChartDto = new DepartmentCountChartDto()
             {
                 ManagmentDepCount = _repo.GetManagmentDepCount(),
                 LogisticsDepCount = _repo.GetLogisticsDepCount(),
@@ -39,8 +39,24 @@ namespace mikroERP.API.Controllers
                 MarketingDepCount = _repo.GetMarketingDepCount()
             };
 
-            return Ok(DepartmentCountChartDto);
+            return Ok(departmentCountChartDto);
         }
+
+        [HttpGet]
+        [Route("GetDepartmetsAvgEarnings")]
+        public IActionResult GetDepartmetsAvgEarnings()
+        {
+            var departmentAvgEarningDto = new DepartmentAvgEarningDto()
+            {
+                ManagmentAvgEarnings = _repo.GetManagmentAvgEarnings(),
+                LogisticAvgEarnings = _repo.GetLogisticsAvgEarnings(),
+                AdministrationAvgEarnings = _repo.GetAdministrationAvgEarnings(),
+                MarketingAvgEarnings = _repo.GetMarketingAvgEarnings()
+            };
+
+            return Ok(departmentAvgEarningDto);
+        }
+
 
     }
 }

@@ -6,7 +6,7 @@
       <mat-option value="none">None</mat-option>
       <mat-option value="option1">Gender Pie Chart</mat-option>
       <mat-option value="option2">Department Bar Chart</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
+      <mat-option value="option3">Department Average Earnings Chart</mat-option>
     </div>
     </mat-select>
   </mat-form-field>
@@ -19,4 +19,8 @@
 
 <div *ngIf="chartDepartmentBar">
   <app-department-chart></app-department-chart>
+</div>
+
+<div *ngIf="chartDepartmentAvg">
+  <app-department-avg-earning-chart></app-department-avg-earning-chart>
 </div>

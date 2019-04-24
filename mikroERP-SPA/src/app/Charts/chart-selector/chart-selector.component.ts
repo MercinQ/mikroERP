@@ -9,6 +9,7 @@ export class ChartSelectorComponent implements OnInit {
   selected: string;
   chartGenderPie = false;
   chartDepartmentBar = false;
+  chartDepartmentAvg = false;
   constructor() { }
 
   ngOnInit() {
@@ -19,18 +20,27 @@ export class ChartSelectorComponent implements OnInit {
       case 'none': {
         this.chartGenderPie = false;
         this.chartDepartmentBar = false;
+        this.chartDepartmentAvg = false;
         break;
       }
       case 'option1': {
         this.chartGenderPie = true;
         this.chartDepartmentBar = false;
+        this.chartDepartmentAvg = false;
         break;
       }
       case 'option2': {
          this.chartDepartmentBar = true;
          this.chartGenderPie = false;
+         this.chartDepartmentAvg = false;
          break;
       }
+      case 'option3': {
+        this.chartDepartmentAvg = true;
+        this.chartDepartmentBar = false;
+        this.chartGenderPie = false;
+        break;
+     }
     }
   }
 

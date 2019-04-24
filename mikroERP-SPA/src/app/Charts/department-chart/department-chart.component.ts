@@ -25,7 +25,8 @@ export class DepartmentChartComponent implements OnInit {
        labels: ['Management', 'Logistics Department', 'Administration Department', 'Marketing department'],
        datasets: [{
            label: 'Employees',
-           data: [9, 7, 3, 4],
+           data: [this.departmentCount.managmentDepCount, this.departmentCount.logisticsDepCount,
+             this.departmentCount.administrationDepCount, this.departmentCount.marketingDepCount],
            backgroundColor: [
                'rgba(255, 99, 132, 0.2)',
                'rgba(54, 162, 235, 0.2)',

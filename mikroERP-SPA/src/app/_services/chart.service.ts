@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { GenderCount } from '../_models/genderCount';
 import { Observable } from 'rxjs';
 import { DepartmetCount } from '../_models/departmetCount';
+import { DepartmentAvgEarning } from '../_models/departmentAvgEarning';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class ChartService {
 
   getDepartmentCount(): Observable<DepartmetCount> {
     return this.http.get<DepartmetCount>(this.baseUrl + 'Chart/GetDepartmetsCount');
+  }
+
+  getDepartmentAvgEarnigs(): Observable<DepartmentAvgEarning> {
+    return this.http.get<DepartmentAvgEarning>(this.baseUrl + 'Chart/GetDepartmetsAvgEarnings');
   }
 }

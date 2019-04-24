@@ -21,6 +21,7 @@ import { ChartService } from './_services/chart.service';
 import { EmployeeUpdateComponent } from './employee-update/employee-update.component';
 import { ChartSelectorComponent } from './Charts/chart-selector/chart-selector.component';
 import { DepartmentChartComponent } from './Charts/department-chart/department-chart.component';
+import { DepartmentAvgEarningChartComponent } from './Charts/departmentAvgEarning-chart/departmentAvgEarning-chart.component';
 
 
 
@@ -35,7 +36,8 @@ import { DepartmentChartComponent } from './Charts/department-chart/department-c
       EmployeesTableComponent,
       EmployeeUpdateComponent,
       ChartSelectorComponent,
-      DepartmentChartComponent
+      DepartmentChartComponent,
+      DepartmentAvgEarningChartComponent
    ],
    imports: [
       BrowserModule,

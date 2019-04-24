@@ -10,5 +10,10 @@ namespace mikroERP.API.Data
          int GetLogisticsDepCount();
          int GetAdministrationDepCount();
          int GetMarketingDepCount();
+         double GetManagmentAvgEarnings();
+         double GetLogisticsAvgEarnings();
+         double GetAdministrationAvgEarnings();
+         double GetMarketingAvgEarnings();
+
     }
 }
