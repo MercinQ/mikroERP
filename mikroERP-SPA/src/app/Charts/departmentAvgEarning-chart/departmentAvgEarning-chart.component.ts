@@ -21,7 +21,7 @@ export class DepartmentAvgEarningChartComponent implements OnInit {
     this.chartService.getDepartmentAvgEarnigs().subscribe((departmentAvgEarnings: DepartmentAvgEarning) => {
       this.departmentAvgEarnings = departmentAvgEarnings;
       this.BarChart = new Chart('barChart', {
-        type: 'bar',
+        type: 'horizontalBar',
       data: {
        labels: ['Management', 'Logistics Department', 'Administration Department', 'Marketing department'],
        datasets: [{
@@ -31,14 +31,14 @@ export class DepartmentAvgEarningChartComponent implements OnInit {
            backgroundColor: [
                'rgba(255, 153, 0, 0.2)',
                'rgba(102, 102, 255, 0.2)',
-               'rgba(102, 0, 51, 0.2)',
+               'rgba(34 ,34 ,34 , 0.2)',
                'rgba(102, 153, 255, 0.2)'
            ],
            borderColor: [
                'rgba(255, 153, 0, 1)',
                'rgba(102, 102, 255, 1)',
                'rgba(102, 0, 51, 1)',
-               'rgba(102, 153, 255, 1)'
+               'rgba(34 ,34 ,34 , 1)'
            ],
            borderWidth: 1
        }]
