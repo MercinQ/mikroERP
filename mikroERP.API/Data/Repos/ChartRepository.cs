@@ -15,37 +15,37 @@ namespace mikroERP.API.Data
 
         public int GetManagmentDepCount()
         {
-            int managmentDepCount = _context.Employees.Where(e => e.DepartmentId == 1).Count();
+            int managmentDepCount = GetDepartmentCount(1);
             return managmentDepCount;
         }
         public int GetLogisticsDepCount()
         {
-            int logisticsDepCount = _context.Employees.Where(e => e.DepartmentId == 2).Count();
+            int logisticsDepCount = GetDepartmentCount(2);
             return logisticsDepCount;
         }
 
         public int GetAdministrationDepCount()
         {
-            int administrationDepCount = _context.Employees.Where(e => e.DepartmentId == 3).Count();
+            int administrationDepCount = GetDepartmentCount(3);
             return administrationDepCount;
         }
 
         public int GetMarketingDepCount()
         {
-            int marketingDepCount = _context.Employees.Where(e => e.DepartmentId == 4).Count();
+            int marketingDepCount = GetDepartmentCount(4);
             return marketingDepCount;
         }
 
         public int GetManCount()
         {
-            int manCount = _context.Employees.Where(e => e.Sex == "M").Count();
+            int manCount = GetGenderCount("M");
             return  manCount;
         }
 
         public int GetWomanCount()
         {
-            int manCount = _context.Employees.Where(e => e.Sex == "F").Count();
-            return  manCount;
+            int womanCount = GetGenderCount("F");
+            return womanCount;
         }
         public List<DateTime> GetBirthday()
         {
@@ -55,42 +55,30 @@ namespace mikroERP.API.Data
 
         public double GetManagmentAvgEarnings()
         {
-            double managmentTotalIncome = _context.Employees
-            .Where(e => e.DepartmentId == 1)
-            .Sum(e => e.Wages);
-            double managmentAvgearnings = managmentTotalIncome / GetManagmentDepCount();
+            double managmentAvgEarnigs= GetDepartmentAvgEarnigs(1, GetManagmentDepCount());
 
-            return managmentAvgearnings;
+            return managmentAvgEarnigs;
         }
 
         public double GetLogisticsAvgEarnings()
         {
-            double logisticsTotalIncome = _context.Employees
-            .Where(e => e.DepartmentId == 2)
-            .Sum(e => e.Wages);
-            double logisticsAvgearnings = logisticsTotalIncome / GetLogisticsDepCount();
+            double logisticsAvgEarnigs = GetDepartmentAvgEarnigs(2, GetLogisticsDepCount());
 
-            return logisticsAvgearnings;
+            return logisticsAvgEarnigs;
         }
 
         public double GetAdministrationAvgEarnings()
         {
-            double administrationTotalIncome = _context.Employees
-            .Where(e => e.DepartmentId == 3)
-            .Sum(e => e.Wages);
-            double administrationAvgearnings = administrationTotalIncome / GetAdministrationDepCount();
+            double administrationAvgEarnigs = GetDepartmentAvgEarnigs(3, GetAdministrationDepCount());
 
-            return administrationAvgearnings;
+            return administrationAvgEarnigs;
         }
 
         public double GetMarketingAvgEarnings()
         {
-            double marketingTotalIncome = _context.Employees
-            .Where(e => e.DepartmentId == 4)
-            .Sum(e => e.Wages);
-            double marketingAvgearnings = marketingTotalIncome / GetMarketingDepCount();
+            double marketingAvgEarnigs = GetDepartmentAvgEarnigs(4, GetMarketingDepCount());
 
-            return marketingAvgearnings;
+            return marketingAvgEarnigs;
         }
 
         public int[] GetNumberOfEmploymentsInMonths()
@@ -105,6 +93,24 @@ namespace mikroERP.API.Data
                 numberOfEmployedInMonths[i - 1] = numberInMonth;
             }
             return numberOfEmployedInMonths;
+        }
+
+        public int GetDepartmentCount(int depId)
+        {
+            return _context.Employees
+                .Where(e => e.DepartmentId == depId).Count();
+        }
+        public int GetGenderCount(string gender)
+        {
+            return _context.Employees
+                .Where(e => e.Sex == gender).Count();
+        }
+
+        public double GetDepartmentAvgEarnigs(int departmentId, int DepartmentCount)
+        {
+            return _context.Employees
+            .Where(e => e.DepartmentId == departmentId)
+            .Sum(e => e.Wages) / DepartmentCount;
         }
     }
 }
