@@ -12,7 +12,11 @@
 th.mat-sort-header-sorted {
   color: black;
 }
-.fas:hover
-{
+.fas:hover{
 color: #4c3851;
+}
+.center-input {
+  width: 20%;
+  margin: auto;
+  display: block;
 }

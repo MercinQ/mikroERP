@@ -44,9 +44,12 @@ export class EmployeesTableComponent implements OnInit {
       }));
   }
 
-  // przekazuje id do komponentu employee-update
   setEmployeeId(rowId: number) {
     this.employeeService.setEmployeeId(rowId);
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
