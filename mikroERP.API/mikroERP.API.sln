@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mikroERP.API", "mikroERP.API.csproj", "{618C9F61-E528-4135-AD8F-6FC06247FC8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mikroERP.Tests", "..\mikroERP.Tests\mikroERP.Tests.csproj", "{BF57EAA3-B7D6-4B33-B92B-21B4D2DBCA1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{618C9F61-E528-4135-AD8F-6FC06247FC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{618C9F61-E528-4135-AD8F-6FC06247FC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{618C9F61-E528-4135-AD8F-6FC06247FC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF57EAA3-B7D6-4B33-B92B-21B4D2DBCA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF57EAA3-B7D6-4B33-B92B-21B4D2DBCA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF57EAA3-B7D6-4B33-B92B-21B4D2DBCA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF57EAA3-B7D6-4B33-B92B-21B4D2DBCA1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

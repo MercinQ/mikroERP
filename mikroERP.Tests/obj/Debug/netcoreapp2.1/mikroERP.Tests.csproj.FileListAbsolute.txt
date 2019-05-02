@@ -1,0 +1,15 @@
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\mikroERP.Tests.deps.json
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\mikroERP.Tests.runtimeconfig.json
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\mikroERP.Tests.runtimeconfig.dev.json
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\mikroERP.Tests.dll
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\bin\Debug\netcoreapp2.1\mikroERP.Tests.pdb
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.csprojAssemblyReference.cache
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.AssemblyInfoInputs.cache
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.AssemblyInfo.cs
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.dll
+C:\Users\Mercin\mikroERP\mikroERP\mikroERP.Tests\obj\Debug\netcoreapp2.1\mikroERP.Tests.pdb
