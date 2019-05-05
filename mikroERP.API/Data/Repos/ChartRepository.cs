@@ -111,6 +111,10 @@ namespace mikroERP.API.Data
 
         private double GetDepAvgEarnings(int depId, int depCount)
         {
+            if(depCount == 0)
+            {
+                return 0;
+            }
             return _context.Employees
             .Where(e => e.DepartmentId == depId)
             .Sum(e => e.Wages) / depCount;
